@@ -1,3 +1,19 @@
+/* 强制显示 输入助手 按钮的容器 */
+/* 输入助手的容器ID是 #custom_buttons_container，并且它在 #qr--bar 内部 */
+#qr--bar #custom_buttons_container {
+    display: flex !important; /* 使用 flex 或 block，取决于其原始布局，flex 常见于 QR bar */
+    visibility: visible !important;
+    opacity: 1 !important; /* 确保不是因为透明度被隐藏 */
+}
+
+/* 强制显示 输入助手 容器内的实际按钮 */
+/* 输入助手的按钮是容器内的 .qr--button 元素 */
+#qr--bar #custom_buttons_container .qr--button {
+     display: flex !important; /* 同样使用 flex 或 block */
+     visibility: visible !important;
+     opacity: 1 !important;
+}
+
 /* 新规则：插件启用时，隐藏 #qr--bar 内的原始触发器和【不属于输入助手的】按钮容器 */
 body.qra-enabled #qr--bar > #qr--popoutTrigger,
 body.qra-enabled #qr--bar > .qr--buttons:not(#input_helper_toolbar) {
